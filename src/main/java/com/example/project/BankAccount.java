@@ -4,18 +4,33 @@ package com.example.project;
 public class BankAccount{
     private String accountType;
     private double balance;
+    private int transferNum;
 
 
     // Constructor with account type and initial balance
     public BankAccount(String accountType, double initialBalance) {
         this.accountType = accountType;
         this.balance = initialBalance;
+        this.transferNum = 0;
     }
 
     public double getBalance(){
         return balance;
     }
 
+    // Getter for account type
+    public String getAccountType() {
+        return accountType;
+    }
+
+    public int getTransferNum(){
+        return transferNum;
+    }
+
+    public void addTransferNum(){
+        transferNum++;
+    }
+    
     public void setBalance(double balance){
         this.balance = balance;
     }
@@ -47,8 +62,7 @@ public class BankAccount{
         System.out.println("Your " + accountType + " account balance is: $" + balance);
     }
 
-    // Getter for account type
-    public String getAccountType() {
-        return accountType;
-    }
+   
+
+
 }

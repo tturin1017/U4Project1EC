@@ -29,7 +29,8 @@ public class Bank {
             System.out.println("1. Deposit");
             System.out.println("2. Withdraw");
             System.out.println("3. Check Balance");
-            System.out.println("4. Exit");
+            System.out.println("4. Transfer");
+            System.out.println("5. Exit");
             int choice = scanner.nextInt();
             scanner.nextLine();  // Consume newline
 
@@ -39,8 +40,9 @@ public class Bank {
                 withdraw(scanner);
             }else if(choice ==3){
                 checkBalance();
-            }
-            else if (choice == 4){
+            }else if(choice == 4){
+                transfer(scanner);
+            }else if (choice == 5){
                 running = false;
                 System.out.println("Thank you for banking with us!");
             }else{
@@ -104,6 +106,46 @@ public class Bank {
                 savingsAccount.checkBalance();
             } else if (i == 2) {
                 checkingAccount.checkBalance();
+            }
+        }
+    }
+
+    public void transfer(Scanner scanner){
+        System.out.println("Enter the amount to transfer: ");
+        double amount = scanner.nextDouble();
+        scanner.nextLine();
+        System.out.println("Choose which account to transfer to: \n1. Checking Account\n2. Savings Account");
+        int option = scanner.nextInt();
+        String fromAccount;
+        scanner.nextLine();
+        if(option == 1){
+            fromAccount = checkingAccount.getAccountType();
+        }else{
+            fromAccount = savingsAccount.getAccountType();
+        }
+
+        if(fromAccount.equals("Savings")){
+            System.out.println("You are transferring from your savings to checking account.");
+            savingsAccount.addTransferNum();
+            if(savingsAccount.getTransferNum()<3){
+                if(amount<=500.0){
+                    System.out.println("Your remaining number of transfers for today is "+(2-savingsAccount.getTransferNum())+
+                    ".");
+                    savingsAccount.withdraw(amount);
+                    checkingAccount.deposit(amount);
+                }else{
+                    System.out.println("You cannot transfer more than $500 to your checking account today.");
+                }
+            }else{
+                System.out.println("You've reached your daily transfer limit for your savings account.");
+            }
+        }else{ //coming from Checking account
+            System.out.println("You are transferring from your checking to savings account.");
+            if(amount<=1000.0){
+                checkingAccount.withdraw(amount);
+                savingsAccount.deposit(amount);
+            }else{
+                System.out.println("You cannot transfer more than $1000 to your savings account today.");
             }
         }
     }
