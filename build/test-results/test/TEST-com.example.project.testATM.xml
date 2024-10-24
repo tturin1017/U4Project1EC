@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.project.testATM" tests="5" skipped="0" failures="0" errors="0" timestamp="2024-10-24T16:19:34" hostname="codespaces-b67600" time="0.135">
+<testsuite name="com.example.project.testATM" tests="5" skipped="0" failures="0" errors="0" timestamp="2024-10-24T17:55:22" hostname="codespaces-b67600" time="0.128">
   <properties/>
-  <testcase name="testCheckingToSavingsAmountLimit()" classname="com.example.project.testATM" time="0.064"/>
-  <testcase name="testSavingsToCheckingsAmountLimit()" classname="com.example.project.testATM" time="0.007"/>
-  <testcase name="testSavingsToCheckingsTransferLimit()" classname="com.example.project.testATM" time="0.042"/>
-  <testcase name="testSavingsToCheckingsBalance()" classname="com.example.project.testATM" time="0.008"/>
-  <testcase name="testCheckingToSavingsBalance()" classname="com.example.project.testATM" time="0.004"/>
+  <testcase name="testCheckingToSavingsAmountLimit()" classname="com.example.project.testATM" time="0.041"/>
+  <testcase name="testSavingsToCheckingsAmountLimit()" classname="com.example.project.testATM" time="0.006"/>
+  <testcase name="testSavingsToCheckingsTransferLimit()" classname="com.example.project.testATM" time="0.056"/>
+  <testcase name="testSavingsToCheckingsBalance()" classname="com.example.project.testATM" time="0.004"/>
+  <testcase name="testCheckingToSavingsBalance()" classname="com.example.project.testATM" time="0.005"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

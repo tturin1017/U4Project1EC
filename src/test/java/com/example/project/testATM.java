@@ -19,7 +19,6 @@ public class testATM {
         Bank bank = new Bank();
         ATM atm = new ATM(bank);
         
-
          // Simulate multiple inputs (e.g., user chooses Deposit, enters 100, then exits)
          String simulatedInput = "4\n10\n2\n5\n";  
          ByteArrayInputStream in = new ByteArrayInputStream(simulatedInput.getBytes());
